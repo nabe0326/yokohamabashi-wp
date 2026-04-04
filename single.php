@@ -75,11 +75,18 @@ get_header();
 		<?php endwhile; endif; ?>
 
 		<!-- 戻りリンク -->
+		<?php
+		$posts_page_url = yokohamabashi_get_posts_page_url();
+		if ( $posts_page_url ) :
+			?>
 		<div class="news-single__back">
-			<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="back-link">
+			<a href="<?php echo esc_url( $posts_page_url ); ?>" class="back-link">
 				&larr; お知らせ一覧に戻る
 			</a>
 		</div>
+			<?php
+		endif;
+		?>
 	</div>
 </main>
 

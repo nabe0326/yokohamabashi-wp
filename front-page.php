@@ -41,7 +41,14 @@ get_header();
 					<p>お知らせはありません。</p>
 				<?php endif; ?>
 			</div>
-			<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="news-section__more">お知らせ一覧へ</a>
+			<?php
+			$posts_page_url = yokohamabashi_get_posts_page_url();
+			if ( $posts_page_url ) :
+				?>
+			<a href="<?php echo esc_url( $posts_page_url ); ?>" class="news-section__more">お知らせ一覧へ</a>
+				<?php
+			endif;
+			?>
 		</div>
 	</section>
 

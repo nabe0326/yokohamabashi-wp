@@ -69,7 +69,22 @@ $shop_terms       = get_the_terms( get_the_ID(), 'shop_category' );
 
 				<?php if ( $shop_map_embed ) : ?>
 					<div class="shop-detail__map">
-						<?php echo $shop_map_embed; ?>
+						<?php
+						// Google Maps iframe用の許可タグ
+						$allowed_html = array(
+							'iframe' => array(
+								'src'             => true,
+								'width'           => true,
+								'height'          => true,
+								'style'           => true,
+								'frameborder'     => true,
+								'allowfullscreen' => true,
+								'loading'         => true,
+								'referrerpolicy'  => true,
+							),
+						);
+						echo wp_kses( $shop_map_embed, $allowed_html );
+						?>
 					</div>
 				<?php endif; ?>
 			</div>

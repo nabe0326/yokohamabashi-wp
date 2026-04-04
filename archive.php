@@ -14,7 +14,7 @@ get_header();
 
 		<!-- カテゴリフィルタ -->
 		<nav class="category-filter">
-			<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="category-filter__link <?php echo ! is_category() ? 'is-active' : ''; ?>">すべて</a>
+			<a href="<?php echo esc_url( yokohamabashi_get_posts_page_url() ); ?>" class="category-filter__link <?php echo ! is_category() ? 'is-active' : ''; ?>">すべて</a>
 			<?php
 			$categories = get_categories( array( 'hide_empty' => true ) );
 			foreach ( $categories as $category ) :

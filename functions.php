@@ -23,3 +23,6 @@ require get_template_directory() . '/inc/taxonomies.php';
 
 // ACFフィールド
 require get_template_directory() . '/inc/acf-fields.php';
+
+// テンプレートヘルパー
+require get_template_directory() . '/inc/template-tags.php';
