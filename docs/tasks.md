@@ -38,9 +38,9 @@
 - [x] 検証: グリッド表示、フィルタ動作、レスポンシブで列数変化
 
 ## Task 6: 店舗個別ページ
-- [ ] single-shop.php（全ACFフィールド表示、Map iframe、戻りリンク）
-- [ ] shop.css に追記
-- [ ] 検証: 全フィールドが正しく出力される
+- [x] single-shop.php（全ACFフィールド表示、Map iframe、戻りリンク）
+- [x] shop.css に追記
+- [x] 検証: 全フィールドが正しく出力される
 
 ## Task 7: アクセス・商店街について・お問い合わせ
 - [ ] page-access.php（Map iframe、住所、動線写真+テキスト）
