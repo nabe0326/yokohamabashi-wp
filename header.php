@@ -1,10 +1,30 @@
+<?php
+/**
+ * Header - 共通ヘッダー
+ *
+ * @package Yokohamabashi_Theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
-  <meta charset="UTF-8">
-  <?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php wp_head(); ?>
 </head>
-<body>
-<header>
-  <h1>横浜橋商店街</h1>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+
+<header class="site-header">
+	<div class="container">
+		<h1 class="site-title">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<?php bloginfo( 'name' ); ?>
+			</a>
+		</h1>
+	</div>
 </header>
