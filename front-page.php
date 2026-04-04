@@ -45,6 +45,34 @@ get_header();
 		</div>
 	</section>
 
+	<!-- ピックアップ店舗セクション -->
+	<section class="pickup-section">
+		<div class="container">
+			<h2 class="section-title">ピックアップ店舗</h2>
+			<div class="pickup-grid">
+				<?php
+				$shop_query = new WP_Query(
+					array(
+						'post_type'      => 'shop',
+						'posts_per_page' => 6,
+					)
+				);
+
+				if ( $shop_query->have_posts() ) :
+					while ( $shop_query->have_posts() ) :
+						$shop_query->the_post();
+						get_template_part( 'template-parts/shop-card' );
+					endwhile;
+					wp_reset_postdata();
+				else :
+					?>
+					<p>店舗情報はありません。</p>
+				<?php endif; ?>
+			</div>
+			<a href="<?php echo esc_url( get_post_type_archive_link( 'shop' ) ); ?>" class="pickup-section__more">店舗一覧へ</a>
+		</div>
+	</section>
+
 	<!-- バナーリンクセクション -->
 	<section class="banner-section">
 		<div class="container">

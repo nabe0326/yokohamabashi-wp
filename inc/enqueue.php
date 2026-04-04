@@ -58,8 +58,8 @@ function yokohamabashi_enqueue_assets() {
 		);
 	}
 
-	// 店舗一覧・店舗個別
-	if ( is_post_type_archive( 'shop' ) || is_singular( 'shop' ) ) {
+	// 店舗一覧・店舗個別・トップページ（ピックアップ店舗）
+	if ( is_front_page() || is_post_type_archive( 'shop' ) || is_singular( 'shop' ) ) {
 		wp_enqueue_style(
 			'yokohamabashi-shop',
 			get_template_directory_uri() . '/assets/css/shop.css',
@@ -76,6 +76,26 @@ function yokohamabashi_enqueue_assets() {
 			array(),
 			$theme_version,
 			true
+		);
+	}
+
+	// 固定ページ（アクセス・商店街について・お問い合わせ）
+	if ( is_page( array( 'access', 'about', 'contact' ) ) ) {
+		wp_enqueue_style(
+			'yokohamabashi-page',
+			get_template_directory_uri() . '/assets/css/page.css',
+			array( 'yokohamabashi-common' ),
+			$theme_version
+		);
+	}
+
+	// お知らせ一覧・個別
+	if ( is_home() || is_archive() || is_singular( 'post' ) ) {
+		wp_enqueue_style(
+			'yokohamabashi-archive',
+			get_template_directory_uri() . '/assets/css/archive.css',
+			array( 'yokohamabashi-common' ),
+			$theme_version
 		);
 	}
 }

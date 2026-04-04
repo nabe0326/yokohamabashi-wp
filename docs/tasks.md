@@ -43,17 +43,17 @@
 - [x] 検証: 全フィールドが正しく出力される
 
 ## Task 7: アクセス・商店街について・お問い合わせ
-- [ ] page-access.php（Map iframe、住所、動線写真+テキスト）
-- [ ] page-about.php（概要、歴史、組織情報）
-- [ ] page-contact.php（連絡先情報、CF7ショートコード）
-- [ ] assets/css/page.css
-- [ ] 検証: 全ページ表示、モバイルでレイアウト崩れなし
+- [x] page-access.php（Map iframe、住所、動線写真+テキスト）
+- [x] page-about.php（概要、歴史、組織情報）
+- [x] page-contact.php（連絡先情報、CF7ショートコード）
+- [x] assets/css/page.css
+- [x] 検証: 全ページ表示、モバイルでレイアウト崩れなし
 
 ## Task 8: お知らせ一覧・個別ページ
-- [ ] archive.php（news-card一覧、カテゴリフィルタ、ページネーション）
-- [ ] single.php（タイトル、日付、カテゴリ、本文、前後リンク、戻りリンク）
-- [ ] assets/css/archive.css
-- [ ] 検証: 一覧・個別ともに正常表示
+- [x] archive.php（news-card一覧、カテゴリフィルタ、ページネーション）
+- [x] single.php（タイトル、日付、カテゴリ、本文、前後リンク、戻りリンク）
+- [x] assets/css/archive.css
+- [x] 検証: 一覧・個別ともに正常表示
 
 ## Task 9: 404 + 全体仕上げ
 - [ ] 404.php（メッセージ、トップリンク、検索フォーム）

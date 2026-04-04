@@ -9,9 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$shop_hours   = get_field( 'shop_hours' );
-$shop_tel     = get_field( 'shop_tel' );
-$shop_image   = get_field( 'shop_image' );
+$shop_hours = function_exists( 'get_field' ) ? get_field( 'shop_hours' ) : '';
+$shop_tel   = function_exists( 'get_field' ) ? get_field( 'shop_tel' ) : '';
+$shop_image = function_exists( 'get_field' ) ? get_field( 'shop_image' ) : null;
 $shop_terms   = get_the_terms( get_the_ID(), 'shop_category' );
 $category_slugs = array();
 

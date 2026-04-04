@@ -1,0 +1,276 @@
+/* ==========================================================================
+   固定ページ共通スタイル（アクセス・商店街について・お問い合わせ）
+   ========================================================================== */
+
+/* ページ共通
+   ========================================================================== */
+.page-access,
+.page-about,
+.page-contact {
+	padding: 2rem 0;
+}
+
+.page-title {
+	font-size: 1.75rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--color-text);
+}
+
+.section-title {
+	font-size: 1.25rem;
+	color: var(--color-text);
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid var(--color-primary);
+}
+
+@media (min-width: 768px) {
+	.page-title {
+		font-size: 2rem;
+	}
+
+	.section-title {
+		font-size: 1.5rem;
+	}
+}
+
+/* ==========================================================================
+   アクセスページ
+   ========================================================================== */
+.access-map {
+	margin-bottom: 2rem;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.access-map iframe {
+	display: block;
+}
+
+.access-info {
+	margin-bottom: 2rem;
+}
+
+.access-address {
+	font-style: normal;
+	font-size: 1rem;
+	line-height: 1.8;
+	color: var(--color-text);
+	padding: 1rem;
+	background: var(--color-bg);
+	border-radius: 8px;
+}
+
+.access-directions {
+	margin-bottom: 2rem;
+}
+
+.direction-item {
+	margin-bottom: 1.5rem;
+	padding: 1rem;
+	background: var(--color-white);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.direction-item__title {
+	font-size: 1rem;
+	color: var(--color-primary);
+	margin-bottom: 0.75rem;
+}
+
+.direction-item__list {
+	list-style: disc;
+	padding-left: 1.5rem;
+	color: var(--color-text);
+	line-height: 1.8;
+}
+
+.direction-item__text {
+	color: var(--color-text);
+	line-height: 1.8;
+}
+
+/* ==========================================================================
+   商店街についてページ
+   ========================================================================== */
+.about-section {
+	margin-bottom: 2.5rem;
+}
+
+.about-content {
+	color: var(--color-text);
+	line-height: 1.8;
+}
+
+.about-content p {
+	margin-bottom: 1rem;
+}
+
+.about-content p:last-child {
+	margin-bottom: 0;
+}
+
+.about-info {
+	display: grid;
+	grid-template-columns: 8rem 1fr;
+	gap: 0.75rem 1rem;
+	padding: 1.5rem;
+	background: var(--color-bg);
+	border-radius: 8px;
+}
+
+.about-info dt {
+	font-weight: bold;
+	color: var(--color-text);
+}
+
+.about-info dd {
+	color: var(--color-text-light);
+}
+
+@media (max-width: 767px) {
+	.about-info {
+		grid-template-columns: 1fr;
+		gap: 0.25rem;
+	}
+
+	.about-info dt {
+		margin-top: 0.75rem;
+	}
+
+	.about-info dt:first-child {
+		margin-top: 0;
+	}
+}
+
+/* ==========================================================================
+   お問い合わせページ
+   ========================================================================== */
+.contact-info {
+	margin-bottom: 2.5rem;
+}
+
+.contact-list {
+	display: grid;
+	grid-template-columns: 6rem 1fr;
+	gap: 0.75rem 1rem;
+	padding: 1.5rem;
+	background: var(--color-bg);
+	border-radius: 8px;
+}
+
+.contact-list dt {
+	font-weight: bold;
+	color: var(--color-text);
+}
+
+.contact-list dd {
+	color: var(--color-text-light);
+}
+
+.contact-list dd a {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.contact-list dd a:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+	.contact-list {
+		grid-template-columns: 1fr;
+		gap: 0.25rem;
+	}
+
+	.contact-list dt {
+		margin-top: 0.75rem;
+	}
+
+	.contact-list dt:first-child {
+		margin-top: 0;
+	}
+}
+
+.contact-form {
+	margin-bottom: 2rem;
+}
+
+.contact-form__note {
+	color: var(--color-text-light);
+	margin-bottom: 1.5rem;
+	line-height: 1.8;
+}
+
+.contact-form__wrapper {
+	padding: 1.5rem;
+	background: var(--color-white);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form__placeholder {
+	text-align: center;
+	color: var(--color-text-light);
+	padding: 2rem;
+}
+
+/* Contact Form 7 スタイル調整 */
+.wpcf7-form p {
+	margin-bottom: 1rem;
+}
+
+.wpcf7-form label {
+	display: block;
+	font-weight: bold;
+	color: var(--color-text);
+	margin-bottom: 0.5rem;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid var(--color-border);
+	border-radius: 4px;
+	font-size: 1rem;
+}
+
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form textarea:focus {
+	outline: none;
+	border-color: var(--color-primary);
+}
+
+.wpcf7-form textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+.wpcf7-form input[type="submit"] {
+	display: inline-block;
+	padding: 0.75rem 2rem;
+	background: var(--color-primary);
+	color: var(--color-white);
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+	background: #b71c1c;
+}
+
+.wpcf7-response-output {
+	margin-top: 1rem;
+	padding: 1rem;
+	border-radius: 4px;
+}

@@ -7,13 +7,13 @@
 
 get_header();
 
-$shop_hours       = get_field( 'shop_hours' );
-$shop_holiday     = get_field( 'shop_holiday' );
-$shop_tel         = get_field( 'shop_tel' );
-$shop_image       = get_field( 'shop_image' );
-$shop_address     = get_field( 'shop_address' );
-$shop_map_embed   = get_field( 'shop_map_embed' );
-$shop_description = get_field( 'shop_description' );
+$shop_hours       = function_exists( 'get_field' ) ? get_field( 'shop_hours' ) : '';
+$shop_holiday     = function_exists( 'get_field' ) ? get_field( 'shop_holiday' ) : '';
+$shop_tel         = function_exists( 'get_field' ) ? get_field( 'shop_tel' ) : '';
+$shop_image       = function_exists( 'get_field' ) ? get_field( 'shop_image' ) : null;
+$shop_address     = function_exists( 'get_field' ) ? get_field( 'shop_address' ) : '';
+$shop_map_embed   = function_exists( 'get_field' ) ? get_field( 'shop_map_embed' ) : '';
+$shop_description = function_exists( 'get_field' ) ? get_field( 'shop_description' ) : '';
 $shop_terms       = get_the_terms( get_the_ID(), 'shop_category' );
 ?>
 
