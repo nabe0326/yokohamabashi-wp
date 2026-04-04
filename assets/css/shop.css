@@ -1,0 +1,204 @@
+/* ==========================================================================
+   店舗一覧・店舗個別ページ
+   ========================================================================== */
+
+/* ページタイトル
+   ========================================================================== */
+.shop-archive .page-title {
+	font-size: 1.75rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--color-text);
+}
+
+/* Google Map
+   ========================================================================== */
+.shop-map {
+	margin-bottom: 2rem;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.shop-map iframe {
+	display: block;
+}
+
+/* 業種フィルタ
+   ========================================================================== */
+.shop-filter {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 2rem;
+	justify-content: center;
+}
+
+.shop-filter__btn {
+	padding: 0.5rem 1rem;
+	border: 2px solid var(--color-primary);
+	background: var(--color-white);
+	color: var(--color-primary);
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 0.875rem;
+	transition: background 0.2s, color 0.2s;
+}
+
+.shop-filter__btn:hover,
+.shop-filter__btn.is-active {
+	background: var(--color-primary);
+	color: var(--color-white);
+}
+
+/* 店舗カードグリッド
+   ========================================================================== */
+.shop-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+	.shop-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1024px) {
+	.shop-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* 店舗カード
+   ========================================================================== */
+.shop-card {
+	background: var(--color-white);
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shop-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.shop-card.is-hidden {
+	display: none;
+}
+
+.shop-card__link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+.shop-card__thumbnail {
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: var(--color-bg);
+}
+
+.shop-card__thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.shop-card__no-image {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text-light);
+	font-size: 0.875rem;
+}
+
+.shop-card__content {
+	padding: 1rem;
+}
+
+.shop-card__title {
+	font-size: 1.125rem;
+	margin-bottom: 0.5rem;
+	color: var(--color-text);
+}
+
+.shop-card__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	margin-bottom: 0.75rem;
+}
+
+.shop-card__tag {
+	display: inline-block;
+	padding: 0.125rem 0.5rem;
+	background: var(--color-secondary);
+	color: var(--color-white);
+	font-size: 0.75rem;
+	border-radius: 4px;
+}
+
+.shop-card__hours,
+.shop-card__tel {
+	font-size: 0.875rem;
+	color: var(--color-text-light);
+	margin-bottom: 0.25rem;
+}
+
+.shop-card__label {
+	font-weight: bold;
+	color: var(--color-text);
+}
+
+/* ページネーション
+   ========================================================================== */
+.pagination {
+	margin-top: 2rem;
+}
+
+.pagination .nav-links {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.5rem;
+	height: 2.5rem;
+	padding: 0 0.75rem;
+	background: var(--color-white);
+	border: 1px solid var(--color-border);
+	border-radius: 4px;
+	color: var(--color-text);
+	text-decoration: none;
+	font-size: 0.875rem;
+}
+
+.pagination .page-numbers:hover {
+	background: var(--color-bg);
+}
+
+.pagination .page-numbers.current {
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+	color: var(--color-white);
+}
+
+/* 店舗なしメッセージ
+   ========================================================================== */
+.no-shops {
+	grid-column: 1 / -1;
+	text-align: center;
+	padding: 3rem;
+	color: var(--color-text-light);
+}

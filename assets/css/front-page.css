@@ -1,0 +1,230 @@
+/* ==========================================================================
+   トップページ
+   ========================================================================== */
+
+/* ヒーロー
+   ========================================================================== */
+.hero {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		var(--color-primary);
+	min-height: 60vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: var(--color-white);
+}
+
+.hero__inner {
+	padding: 2rem;
+}
+
+.hero__title {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.hero__catchcopy {
+	font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+	.hero {
+		min-height: 70vh;
+	}
+
+	.hero__title {
+		font-size: 3.5rem;
+	}
+
+	.hero__catchcopy {
+		font-size: 1.5rem;
+	}
+}
+
+/* セクション共通
+   ========================================================================== */
+.section-title {
+	font-size: 1.5rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+	.section-title {
+		font-size: 2rem;
+	}
+}
+
+/* お知らせセクション
+   ========================================================================== */
+.news-section {
+	padding: 3rem 0;
+	background: var(--color-white);
+}
+
+.news-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.news-section__more {
+	display: block;
+	text-align: center;
+	margin-top: 2rem;
+	color: var(--color-primary);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.news-section__more:hover {
+	text-decoration: underline;
+}
+
+/* お知らせカード
+   ========================================================================== */
+.news-card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	background: var(--color-bg);
+	border-radius: 8px;
+}
+
+.news-card__thumbnail img {
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+.news-card__date {
+	font-size: 0.875rem;
+	color: var(--color-text-light);
+}
+
+.news-card__title {
+	font-size: 1rem;
+	margin: 0.25rem 0;
+}
+
+.news-card__title a {
+	color: var(--color-text);
+	text-decoration: none;
+}
+
+.news-card__title a:hover {
+	color: var(--color-primary);
+}
+
+.news-card__excerpt {
+	font-size: 0.875rem;
+	color: var(--color-text-light);
+	line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+	.news-card {
+		flex-direction: row;
+	}
+
+	.news-card__thumbnail {
+		flex-shrink: 0;
+		width: 150px;
+	}
+
+	.news-card__content {
+		flex: 1;
+	}
+}
+
+/* バナーセクション
+   ========================================================================== */
+.banner-section {
+	padding: 3rem 0;
+	background: var(--color-bg);
+}
+
+.banner-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+.banner-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	background: var(--color-white);
+	border-radius: 8px;
+	text-decoration: none;
+	color: var(--color-text);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.banner-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.banner-card__icon {
+	font-size: 2.5rem;
+	color: var(--color-primary);
+	margin-bottom: 0.5rem;
+}
+
+.banner-card__title {
+	font-size: 1.125rem;
+	font-weight: bold;
+}
+
+@media (min-width: 768px) {
+	.banner-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* SNS・関連リンクセクション
+   ========================================================================== */
+.links-section {
+	padding: 3rem 0;
+	background: var(--color-white);
+}
+
+.links-grid {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.link-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.5rem 2rem;
+	background: var(--color-bg);
+	border-radius: 8px;
+	text-decoration: none;
+	color: var(--color-text);
+	transition: background 0.2s;
+}
+
+.link-card:hover {
+	background: var(--color-border);
+}
+
+.link-card__icon {
+	font-size: 2rem;
+	color: var(--color-secondary);
+	margin-bottom: 0.5rem;
+}
+
+.link-card__title {
+	font-size: 0.875rem;
+}

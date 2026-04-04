@@ -4,38 +4,38 @@
 設計の詳細は `docs/design.md` を参照。
 
 ## Task 1: テーマ骨格 + CSS基盤
-- [ ] style.css にテーマ情報ヘッダーを記述
-- [ ] functions.php で inc/ の各ファイルを require
-- [ ] inc/theme-support.php（title-tag, post-thumbnails, html5, custom-logo, register_nav_menus）
-- [ ] inc/enqueue.php（CSS/JS の wp_enqueue、ページ別条件分岐）
-- [ ] assets/css/common.css（リセット、CSS変数、.container、ベースタイポグラフィ）
-- [ ] 検証: テーマ有効化してエラーなし、CSS変数が効いている
+- [x] style.css にテーマ情報ヘッダーを記述
+- [x] functions.php で inc/ の各ファイルを require
+- [x] inc/theme-support.php（title-tag, post-thumbnails, html5, custom-logo, register_nav_menus）
+- [x] inc/enqueue.php（CSS/JS の wp_enqueue、ページ別条件分岐）
+- [x] assets/css/common.css（リセット、CSS変数、.container、ベースタイポグラフィ）
+- [x] 検証: テーマ有効化してエラーなし、CSS変数が効いている
 
 ## Task 2: ヘッダー・フッター
-- [ ] header.php（ロゴ、デスクトップナビ、ハンバーガーボタン、モバイルドロワー）
-- [ ] footer.php（SNSリンク、コピーライト、wp_footer）
-- [ ] assets/css/header.css, footer.css
-- [ ] assets/js/navigation.js（ハンバーガー開閉、外クリック閉じ、ESC閉じ）
-- [ ] 検証: デスクトップでナビ横並び、モバイルでハンバーガー動作
+- [x] header.php（ロゴ、デスクトップナビ、ハンバーガーボタン、モバイルドロワー）
+- [x] footer.php（SNSリンク、コピーライト、wp_footer）
+- [x] assets/css/header.css, footer.css
+- [x] assets/js/navigation.js（ハンバーガー開閉、外クリック閉じ、ESC閉じ）
+- [x] 検証: デスクトップでナビ横並び、モバイルでハンバーガー動作
 
 ## Task 3: カスタム投稿タイプ + ACF
-- [ ] inc/custom-post-types.php（shop 登録）
-- [ ] inc/taxonomies.php（shop_category 登録）
-- [ ] inc/acf-fields.php（acf_add_local_field_group で全フィールド定義）
-- [ ] 検証: 管理画面に「店舗情報」表示、編集画面にACFフィールド表示
+- [x] inc/custom-post-types.php（shop 登録）
+- [x] inc/taxonomies.php（shop_category 登録）
+- [x] inc/acf-fields.php（acf_add_local_field_group で全フィールド定義）
+- [x] 検証: 管理画面に「店舗情報」表示、編集画面にACFフィールド表示
 
 ## Task 4: トップページ
-- [ ] front-page.php（ヒーロー、お知らせ、バナー、SNS、関連リンク）
-- [ ] template-parts/news-card.php（日付、タイトル、抜粋、アイキャッチ）
-- [ ] assets/css/front-page.css
-- [ ] 検証: 全セクション表示、お知らせが投稿から取得されている
+- [x] front-page.php（ヒーロー、お知らせ、バナー、SNS、関連リンク）
+- [x] template-parts/news-card.php（日付、タイトル、抜粋、アイキャッチ）
+- [x] assets/css/front-page.css
+- [x] 検証: 全セクション表示、お知らせが投稿から取得されている
 
 ## Task 5: 店舗一覧ページ
-- [ ] archive-shop.php（Map iframe、フィルタボタン、カードグリッド、ページネーション）
-- [ ] template-parts/shop-card.php（写真、店舗名、業種タグ、営業時間、電話番号、data-category属性）
-- [ ] assets/css/shop.css（グリッド: 1列→2列→3列）
-- [ ] assets/js/shop-filter.js（カテゴリボタンで表示/非表示切替）
-- [ ] 検証: グリッド表示、フィルタ動作、レスポンシブで列数変化
+- [x] archive-shop.php（Map iframe、フィルタボタン、カードグリッド、ページネーション）
+- [x] template-parts/shop-card.php（写真、店舗名、業種タグ、営業時間、電話番号、data-category属性）
+- [x] assets/css/shop.css（グリッド: 1列→2列→3列）
+- [x] assets/js/shop-filter.js（カテゴリボタンで表示/非表示切替）
+- [x] 検証: グリッド表示、フィルタ動作、レスポンシブで列数変化
 
 ## Task 6: 店舗個別ページ
 - [ ] single-shop.php（全ACFフィールド表示、Map iframe、戻りリンク）
