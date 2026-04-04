@@ -19,6 +19,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<!-- ポップな浮遊装飾 -->
+<div class="floating-decorations" aria-hidden="true">
+	<span class="floating-bubble floating-bubble--1"></span>
+	<span class="floating-bubble floating-bubble--2"></span>
+	<span class="floating-bubble floating-bubble--3"></span>
+	<span class="floating-bubble floating-bubble--4"></span>
+	<span class="floating-bubble floating-bubble--5"></span>
+	<span class="floating-bubble floating-bubble--6"></span>
+	<span class="floating-bubble floating-bubble--7"></span>
+	<span class="floating-bubble floating-bubble--8"></span>
+</div>
+
 <header class="site-header">
 	<div class="site-header__inner container">
 		<div class="site-header__logo">

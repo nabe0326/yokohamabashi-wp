@@ -33,11 +33,19 @@ add_filter( 'template_include', 'yokohamabashi_mark_archive_styles_template', 99
 function yokohamabashi_enqueue_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
+	// Google Fonts（M PLUS Rounded 1c）
+	wp_enqueue_style(
+		'yokohamabashi-google-fonts',
+		'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap',
+		array(),
+		null
+	);
+
 	// 共通CSS
 	wp_enqueue_style(
 		'yokohamabashi-common',
 		get_template_directory_uri() . '/assets/css/common.css',
-		array(),
+		array( 'yokohamabashi-google-fonts' ),
 		$theme_version
 	);
 
