@@ -10,12 +10,18 @@ get_header();
 ?>
 
 <main class="page-about">
-	<div class="container">
-		<h1 class="page-title">商店街について</h1>
+	<section class="page-header-band">
+		<div class="container page-header-band__inner">
+			<span class="page-header-band__eyebrow">About</span>
+			<h1 class="page-header-band__title">商店街について</h1>
+			<p class="page-header-band__lead">横浜橋商店街の歩みと、地域で育まれてきた魅力をご紹介します。</p>
+		</div>
+	</section>
+	<div class="container page-main-content">
 
 		<!-- 概要 -->
 		<section class="about-section">
-			<h2 class="section-title">横浜橋商店街とは</h2>
+			<h2 class="page-section-title">横浜橋商店街とは</h2>
 			<div class="about-content">
 				<p>
 					横浜橋商店街は、横浜市南区に位置する活気あふれる商店街です。
@@ -30,7 +36,7 @@ get_header();
 
 		<!-- 歴史 -->
 		<section class="about-section">
-			<h2 class="section-title">商店街の歴史</h2>
+			<h2 class="page-section-title">商店街の歴史</h2>
 			<div class="about-content">
 				<p>
 					横浜橋商店街の歴史は古く、戦後の闇市から始まりました。
@@ -44,7 +50,7 @@ get_header();
 
 		<!-- 組織情報 -->
 		<section class="about-section">
-			<h2 class="section-title">組織情報</h2>
+			<h2 class="page-section-title">組織情報</h2>
 			<dl class="about-info">
 				<dt>名称</dt>
 				<dd>横浜橋商店街協同組合</dd>

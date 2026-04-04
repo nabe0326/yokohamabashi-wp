@@ -96,5 +96,75 @@ function yokohamabashi_register_acf_fields() {
 			),
 		)
 	);
+
+	acf_add_local_field_group(
+		array(
+			'key'                   => 'group_front_page',
+			'title'                 => 'トップページ（フロントページ）',
+			'fields'                => array(
+				array(
+					'key'           => 'field_front_hero_image',
+					'label'         => 'ヒーロー背景画像',
+					'name'          => 'front_hero_image',
+					'type'          => 'image',
+					'required'      => 0,
+					'return_format' => 'array',
+					'preview_size'  => 'large',
+					'instructions'  => '未設定の場合はグラデーションのみ表示されます。',
+				),
+				array(
+					'key'          => 'field_front_hero_lead',
+					'label'        => 'ヒーロー補足文',
+					'name'         => 'front_hero_lead',
+					'type'         => 'textarea',
+					'required'     => 0,
+					'rows'         => 2,
+					'instructions' => 'キャッチコピーの下に表示する短い文章（任意）',
+				),
+				array(
+					'key'         => 'field_front_intro_title',
+					'label'       => 'イントロ見出し',
+					'name'        => 'front_intro_title',
+					'type'        => 'text',
+					'required'    => 0,
+					'placeholder' => '未入力時はデフォルト文を表示',
+				),
+				array(
+					'key'          => 'field_front_intro_body',
+					'label'        => 'イントロ本文',
+					'name'         => 'front_intro_body',
+					'type'         => 'textarea',
+					'required'     => 0,
+					'rows'         => 5,
+					'instructions' => '未入力時はデフォルト文を表示',
+				),
+				array(
+					'key'           => 'field_front_pickup_shops',
+					'label'         => 'ピックアップ店舗',
+					'name'          => 'front_pickup_shops',
+					'type'          => 'post_object',
+					'post_type'     => array( 'shop' ),
+					'multiple'      => 1,
+					'return_format' => 'id',
+					'min'           => 0,
+					'max'           => 6,
+					'instructions'  => '最大6件。未選択の場合は新しい順に6件表示します。',
+				),
+			),
+			'location'              => array(
+				array(
+					array(
+						'param'    => 'page_type',
+						'operator' => '==',
+						'value'    => 'front_page',
+					),
+				),
+			),
+			'position'              => 'acf_after_title',
+			'style'                 => 'default',
+			'label_placement'       => 'top',
+			'instruction_placement' => 'label',
+		)
+	);
 }
 add_action( 'acf/init', 'yokohamabashi_register_acf_fields' );

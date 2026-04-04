@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<div class="search-results">
+<main class="search-results">
 	<div class="container">
 		<h1 class="page-title">
 			「<?php echo esc_html( get_search_query() ); ?>」の検索結果
@@ -67,7 +67,7 @@ get_header();
 			</div>
 		<?php endif; ?>
 	</div>
-</div>
+</main>
 
 <?php
 get_footer();

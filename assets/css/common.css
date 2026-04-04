@@ -110,6 +110,107 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   Inner Page Components
+   -------------------------------------------------------------------------- */
+.page-header-band {
+	position: relative;
+	overflow: hidden;
+	padding: 3.25rem 0 2.75rem;
+	background: linear-gradient(135deg, #fff2f2 0%, #fff9ef 45%, #f4f9ff 100%);
+	border-bottom: 1px solid rgba(211, 47, 47, 0.12);
+}
+
+.page-header-band::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(circle at 12% 82%, rgba(211, 47, 47, 0.12) 0%, transparent 48%),
+		radial-gradient(circle at 88% 18%, rgba(21, 101, 192, 0.12) 0%, transparent 45%);
+	pointer-events: none;
+}
+
+.page-header-band__inner {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+
+.page-header-band__eyebrow {
+	display: none;
+}
+
+.page-header-band__title {
+	position: relative;
+	display: block;
+	font-size: 1.9rem;
+	color: var(--color-text);
+	padding-bottom: 0.95rem;
+	margin-bottom: 0.9rem;
+}
+
+.page-header-band__title::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	width: 68px;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--gradient-primary);
+}
+
+.page-header-band__lead {
+	max-width: 42rem;
+	margin: 0 auto;
+	color: var(--color-text-light);
+	line-height: 1.8;
+}
+
+.page-main-content {
+	padding: 2.5rem 0 4rem;
+}
+
+.page-section-title {
+	position: relative;
+	display: inline-block;
+	font-size: 1.35rem;
+	margin-bottom: 1.25rem;
+	padding-bottom: 0.65rem;
+	color: var(--color-text);
+}
+
+.page-section-title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 58px;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--gradient-primary);
+}
+
+@media (min-width: 768px) {
+	.page-header-band {
+		padding: 4rem 0 3.25rem;
+	}
+
+	.page-header-band__title {
+		font-size: 2.5rem;
+	}
+
+	.page-main-content {
+		padding: 3.5rem 0 5rem;
+	}
+
+	.page-section-title {
+		font-size: 1.6rem;
+	}
+}
+
+/* --------------------------------------------------------------------------
    Typography
    -------------------------------------------------------------------------- */
 h1,

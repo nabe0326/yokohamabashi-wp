@@ -10,8 +10,14 @@ get_header();
 ?>
 
 <main class="page-access">
-	<div class="container">
-		<h1 class="page-title">アクセス</h1>
+	<section class="page-header-band">
+		<div class="container page-header-band__inner">
+			<span class="page-header-band__eyebrow">Access</span>
+			<h1 class="page-header-band__title">アクセス</h1>
+			<p class="page-header-band__lead">電車・バス・お車でのご来場方法をご案内します。</p>
+		</div>
+	</section>
+	<div class="container page-main-content">
 
 		<!-- Google Map -->
 		<section class="access-map">
@@ -28,7 +34,7 @@ get_header();
 
 		<!-- 住所・基本情報 -->
 		<section class="access-info">
-			<h2 class="section-title">所在地</h2>
+			<h2 class="page-section-title">所在地</h2>
 			<address class="access-address">
 				〒232-0024<br>
 				神奈川県横浜市南区浦舟町3丁目
@@ -37,7 +43,7 @@ get_header();
 
 		<!-- 交通アクセス -->
 		<section class="access-directions">
-			<h2 class="section-title">交通アクセス</h2>
+			<h2 class="page-section-title">交通アクセス</h2>
 
 			<div class="direction-item">
 				<h3 class="direction-item__title">電車でお越しの方</h3>

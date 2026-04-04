@@ -91,5 +91,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</nav>
 	</div>
 </div>
-
-<main id="main" class="site-main">

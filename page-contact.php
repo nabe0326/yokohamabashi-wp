@@ -10,12 +10,18 @@ get_header();
 ?>
 
 <main class="page-contact">
-	<div class="container">
-		<h1 class="page-title">お問い合わせ</h1>
+	<section class="page-header-band">
+		<div class="container page-header-band__inner">
+			<span class="page-header-band__eyebrow">Contact</span>
+			<h1 class="page-header-band__title">お問い合わせ</h1>
+			<p class="page-header-band__lead">ご質問・ご相談はフォームまたはお電話でお気軽にご連絡ください。</p>
+		</div>
+	</section>
+	<div class="container page-main-content">
 
 		<!-- 連絡先情報 -->
 		<section class="contact-info">
-			<h2 class="section-title">連絡先</h2>
+			<h2 class="page-section-title">連絡先</h2>
 			<dl class="contact-list">
 				<dt>組合事務所</dt>
 				<dd>横浜橋商店街協同組合</dd>
@@ -33,7 +39,7 @@ get_header();
 
 		<!-- お問い合わせフォーム -->
 		<section class="contact-form">
-			<h2 class="section-title">お問い合わせフォーム</h2>
+			<h2 class="page-section-title">お問い合わせフォーム</h2>
 			<p class="contact-form__note">
 				下記フォームよりお問い合わせください。<br>
 				通常2〜3営業日以内にご返信いたします。

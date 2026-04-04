@@ -1,5 +1,5 @@
 /**
- * 店舗一覧 業種フィルタ
+ * 店舗一覧 検索・フィルタ
  *
  * @package Yokohamabashi_Theme
  */
@@ -8,16 +8,62 @@
 	'use strict';
 
 	document.addEventListener('DOMContentLoaded', function() {
+		var searchInput = document.getElementById('shop-search-input');
 		var filterButtons = document.querySelectorAll('.shop-filter__btn');
 		var shopCards = document.querySelectorAll('.shop-card');
+		var noResultsMessage = document.querySelector('.shop-grid__no-results');
 
-		if (filterButtons.length === 0 || shopCards.length === 0) {
+		if (shopCards.length === 0) {
 			return;
 		}
 
+		var currentFilter = 'all';
+		var currentSearch = '';
+
+		/**
+		 * カードの表示/非表示を更新
+		 */
+		function updateCards() {
+			var visibleCount = 0;
+
+			shopCards.forEach(function(card) {
+				var categories = card.getAttribute('data-category') || '';
+				var titleElement = card.querySelector('.shop-card__title');
+				var title = titleElement ? titleElement.textContent.toLowerCase() : '';
+
+				// カテゴリフィルタ条件
+				var matchesCategory = currentFilter === 'all' || categories.indexOf(currentFilter) !== -1;
+
+				// 検索条件
+				var matchesSearch = currentSearch === '' || title.indexOf(currentSearch) !== -1;
+
+				// 両方の条件を満たす場合のみ表示
+				if (matchesCategory && matchesSearch) {
+					card.classList.remove('is-hidden');
+					visibleCount++;
+				} else {
+					card.classList.add('is-hidden');
+				}
+			});
+
+			// 該当なしメッセージの表示/非表示
+			if (noResultsMessage) {
+				noResultsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+			}
+		}
+
+		// 検索入力イベント
+		if (searchInput) {
+			searchInput.addEventListener('input', function() {
+				currentSearch = this.value.toLowerCase().trim();
+				updateCards();
+			});
+		}
+
+		// カテゴリフィルタボタンイベント
 		filterButtons.forEach(function(button) {
 			button.addEventListener('click', function() {
-				var filter = this.getAttribute('data-filter');
+				currentFilter = this.getAttribute('data-filter');
 
 				// ボタンのアクティブ状態を切り替え
 				filterButtons.forEach(function(btn) {
@@ -25,18 +71,7 @@
 				});
 				this.classList.add('is-active');
 
-				// カードの表示/非表示を切り替え
-				shopCards.forEach(function(card) {
-					var categories = card.getAttribute('data-category');
-
-					if (filter === 'all') {
-						card.classList.remove('is-hidden');
-					} else if (categories && categories.indexOf(filter) !== -1) {
-						card.classList.remove('is-hidden');
-					} else {
-						card.classList.add('is-hidden');
-					}
-				});
+				updateCards();
 			});
 		});
 	});

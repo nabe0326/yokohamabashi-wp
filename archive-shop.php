@@ -9,8 +9,14 @@ get_header();
 ?>
 
 <main class="shop-archive">
-	<div class="container">
-		<h1 class="page-title">店舗一覧</h1>
+	<section class="page-header-band">
+		<div class="container page-header-band__inner">
+			<span class="page-header-band__eyebrow">Shop Guide</span>
+			<h1 class="page-header-band__title">店舗一覧</h1>
+			<p class="page-header-band__lead">業種で絞り込みながら、気になるお店を見つけてください。</p>
+		</div>
+	</section>
+	<div class="container page-main-content">
 
 		<!-- Google Map -->
 		<section class="shop-map">
@@ -24,6 +30,17 @@ get_header();
 				referrerpolicy="no-referrer-when-downgrade"
 			></iframe>
 		</section>
+
+		<!-- 検索・フィルタ -->
+		<div class="shop-search">
+			<label for="shop-search-input" class="visually-hidden">店舗名で検索</label>
+			<input
+				type="search"
+				id="shop-search-input"
+				class="shop-search__input"
+				placeholder="店舗名で検索..."
+			>
+		</div>
 
 		<!-- 業種フィルタ -->
 		<section class="shop-filter">
@@ -60,6 +77,7 @@ get_header();
 				?>
 				<p class="no-shops">店舗情報がありません。</p>
 			<?php endif; ?>
+			<p class="shop-grid__no-results" style="display: none;">該当する店舗が見つかりませんでした。</p>
 		</section>
 
 		<!-- ページネーション -->

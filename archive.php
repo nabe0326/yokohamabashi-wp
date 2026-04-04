@@ -9,8 +9,14 @@ get_header();
 ?>
 
 <main class="news-archive">
-	<div class="container">
-		<h1 class="page-title">お知らせ</h1>
+	<section class="page-header-band">
+		<div class="container page-header-band__inner">
+			<span class="page-header-band__eyebrow">News</span>
+			<h1 class="page-header-band__title">お知らせ</h1>
+			<p class="page-header-band__lead">商店街の最新情報やイベント案内をお届けします。</p>
+		</div>
+	</section>
+	<div class="container page-main-content">
 
 		<!-- カテゴリフィルタ -->
 		<nav class="category-filter">

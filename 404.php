@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<div class="error-404">
+<main class="error-404">
 	<div class="container">
 		<div class="error-404__inner">
 			<h1 class="error-404__title">404</h1>
@@ -33,7 +33,7 @@ get_header();
 			</div>
 		</div>
 	</div>
-</div>
+</main>
 
 <?php
 get_footer();

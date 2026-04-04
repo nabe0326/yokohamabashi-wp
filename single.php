@@ -9,8 +9,15 @@ get_header();
 ?>
 
 <main class="news-single">
-	<div class="container">
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<section class="page-header-band">
+			<div class="container page-header-band__inner">
+				<span class="page-header-band__eyebrow">News Detail</span>
+				<h1 class="page-header-band__title"><?php the_title(); ?></h1>
+				<p class="page-header-band__lead">商店街からのお知らせ詳細ページです。</p>
+			</div>
+		</section>
+		<div class="container page-main-content">
 			<article class="news-detail">
 				<!-- ヘッダー -->
 				<header class="news-detail__header">
@@ -31,7 +38,7 @@ get_header();
 						</div>
 					<?php endif; ?>
 
-					<h1 class="news-detail__title"><?php the_title(); ?></h1>
+					<h2 class="news-detail__title"><?php the_title(); ?></h2>
 				</header>
 
 				<!-- アイキャッチ -->
@@ -72,22 +79,22 @@ get_header();
 					</div>
 				</nav>
 			</article>
-		<?php endwhile; endif; ?>
 
-		<!-- 戻りリンク -->
-		<?php
-		$posts_page_url = yokohamabashi_get_posts_page_url();
-		if ( $posts_page_url ) :
-			?>
-		<div class="news-single__back">
-			<a href="<?php echo esc_url( $posts_page_url ); ?>" class="back-link">
-				&larr; お知らせ一覧に戻る
-			</a>
-		</div>
+			<!-- 戻りリンク -->
 			<?php
-		endif;
-		?>
-	</div>
+			$posts_page_url = yokohamabashi_get_posts_page_url();
+			if ( $posts_page_url ) :
+				?>
+			<div class="news-single__back">
+				<a href="<?php echo esc_url( $posts_page_url ); ?>" class="back-link">
+					&larr; お知らせ一覧に戻る
+				</a>
+			</div>
+				<?php
+			endif;
+			?>
+		</div>
+	<?php endwhile; endif; ?>
 </main>
 
 <?php

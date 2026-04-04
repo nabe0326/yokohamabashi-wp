@@ -21,7 +21,14 @@ $shop_info_has_content = $shop_hours || $shop_holiday || $shop_tel || $shop_addr
 ?>
 
 <main class="shop-single">
-	<div class="container">
+	<section class="page-header-band">
+		<div class="container page-header-band__inner">
+			<span class="page-header-band__eyebrow">Shop Detail</span>
+			<h1 class="page-header-band__title"><?php the_title(); ?></h1>
+			<p class="page-header-band__lead">営業時間やアクセスなど、お店の詳細情報をご覧いただけます。</p>
+		</div>
+	</section>
+	<div class="container page-main-content">
 		<article class="shop-detail">
 			<!-- 店舗写真 -->
 			<div class="shop-detail__image">
@@ -34,7 +41,7 @@ $shop_info_has_content = $shop_hours || $shop_holiday || $shop_tel || $shop_addr
 
 			<!-- 店舗情報 -->
 			<div class="shop-detail__content">
-				<h1 class="shop-detail__title"><?php the_title(); ?></h1>
+				<h2 class="shop-detail__title"><?php the_title(); ?></h2>
 
 				<?php if ( ! empty( $shop_terms ) && ! is_wp_error( $shop_terms ) ) : ?>
 					<div class="shop-detail__tags">
@@ -50,7 +57,7 @@ $shop_info_has_content = $shop_hours || $shop_holiday || $shop_tel || $shop_addr
 
 				<?php if ( $shop_info_has_content ) : ?>
 					<section class="shop-detail__info-card" aria-labelledby="shop-detail-info-heading">
-						<h2 class="shop-detail__info-heading" id="shop-detail-info-heading">店舗情報</h2>
+						<h3 class="shop-detail__info-heading" id="shop-detail-info-heading">店舗情報</h3>
 						<div class="shop-detail__info-table-wrap">
 							<table class="shop-detail__info-table">
 								<tbody>
