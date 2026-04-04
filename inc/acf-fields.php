@@ -60,6 +60,14 @@ function yokohamabashi_register_acf_fields() {
 					'required' => 0,
 				),
 				array(
+					'key'           => 'field_shop_video',
+					'label'         => '紹介動画（YouTube）',
+					'name'          => 'shop_video',
+					'type'          => 'oembed',
+					'required'      => 0,
+					'instructions'  => 'YouTubeの動画URLを貼り付けてください',
+				),
+				array(
 					'key'         => 'field_shop_map_embed',
 					'label'       => 'Google Map埋め込み',
 					'name'        => 'shop_map_embed',
