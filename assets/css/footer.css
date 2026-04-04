@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Footer CSS - 横浜橋商店街テーマ
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Site Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+	background-color: var(--color-text);
+	color: var(--color-white);
+	padding: 2rem 0;
+}
+
+.site-footer__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.site-footer__inner {
+		flex-direction: row;
+		justify-content: space-between;
+		text-align: left;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   SNS List
+   -------------------------------------------------------------------------- */
+.sns-list {
+	display: flex;
+	gap: 1rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sns-list__item {
+	margin: 0;
+}
+
+.sns-list__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	color: var(--color-white);
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sns-list__link:hover {
+	background-color: var(--color-primary);
+	transform: scale(1.1);
+	text-decoration: none;
+}
+
+.sns-list__icon {
+	width: 20px;
+	height: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Footer Info
+   -------------------------------------------------------------------------- */
+.site-footer__info {
+	order: -1;
+}
+
+@media (min-width: 768px) {
+	.site-footer__info {
+		order: 0;
+	}
+}
+
+.site-footer__name {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Copyright
+   -------------------------------------------------------------------------- */
+.site-footer__copyright {
+	margin: 0;
+	font-size: 0.875rem;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.site-footer__copyright small {
+	font-size: inherit;
+}

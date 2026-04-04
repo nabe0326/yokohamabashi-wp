@@ -1,0 +1,278 @@
+/* ==========================================================================
+   Header CSS - 横浜橋商店街テーマ
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Site Header
+   -------------------------------------------------------------------------- */
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: var(--color-white);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	height: var(--header-height);
+}
+
+.site-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Logo
+   -------------------------------------------------------------------------- */
+.site-header__logo {
+	flex-shrink: 0;
+}
+
+.site-header__logo-link {
+	display: block;
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.site-header__logo-link:hover {
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+.site-header__logo .custom-logo {
+	max-height: 50px;
+	width: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Desktop Navigation
+   -------------------------------------------------------------------------- */
+.site-nav {
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	.site-nav {
+		display: block;
+	}
+}
+
+.site-nav__list {
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav__list li {
+	margin: 0;
+}
+
+.site-nav__list a {
+	display: block;
+	padding: 0.5rem 0;
+	color: var(--color-text);
+	font-weight: 500;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.site-nav__list a:hover {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.site-nav__list .current-menu-item a,
+.site-nav__list .current_page_item a {
+	color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Hamburger Button
+   -------------------------------------------------------------------------- */
+.hamburger {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+	.hamburger {
+		display: none;
+	}
+}
+
+.hamburger__line {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background-color: var(--color-text);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger__line:nth-child(1) {
+	transform: translateY(-6px);
+}
+
+.hamburger__line:nth-child(3) {
+	transform: translateY(6px);
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line:nth-child(1) {
+	transform: translateY(2px) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line:nth-child(3) {
+	transform: translateY(-2px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Drawer
+   -------------------------------------------------------------------------- */
+.mobile-drawer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 200;
+	visibility: hidden;
+}
+
+.mobile-drawer[aria-hidden="false"] {
+	visibility: visible;
+}
+
+@media (min-width: 1024px) {
+	.mobile-drawer {
+		display: none;
+	}
+}
+
+.mobile-drawer__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.mobile-drawer[aria-hidden="false"] .mobile-drawer__overlay {
+	opacity: 1;
+}
+
+.mobile-drawer__content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80%;
+	max-width: 300px;
+	height: 100%;
+	background-color: var(--color-white);
+	padding: 1.5rem;
+	transform: translateX(100%);
+	transition: transform 0.3s ease;
+	overflow-y: auto;
+}
+
+.mobile-drawer[aria-hidden="false"] .mobile-drawer__content {
+	transform: translateX(0);
+}
+
+.mobile-drawer__close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.mobile-drawer__close-icon {
+	position: relative;
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
+}
+
+.mobile-drawer__close-icon::before,
+.mobile-drawer__close-icon::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-text);
+}
+
+.mobile-drawer__close-icon::before {
+	transform: rotate(45deg);
+}
+
+.mobile-drawer__close-icon::after {
+	transform: rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Navigation
+   -------------------------------------------------------------------------- */
+.mobile-nav {
+	margin-top: 3rem;
+}
+
+.mobile-nav__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mobile-nav__list li {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav__list a {
+	display: block;
+	padding: 1rem 0;
+	color: var(--color-text);
+	font-size: 1.1rem;
+	text-decoration: none;
+}
+
+.mobile-nav__list a:hover {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.mobile-nav__list .current-menu-item a,
+.mobile-nav__list .current_page_item a {
+	color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Site Main
+   -------------------------------------------------------------------------- */
+.site-main {
+	min-height: calc(100vh - var(--header-height) - 200px);
+}
