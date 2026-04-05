@@ -25,8 +25,11 @@ if ( ! empty( $shop_terms ) && ! is_wp_error( $shop_terms ) ) {
 <article class="shop-card" data-category="<?php echo esc_attr( implode( ' ', $category_slugs ) ); ?>">
 	<a href="<?php the_permalink(); ?>" class="shop-card__link">
 		<div class="shop-card__thumbnail">
+			<?php
+			$shop_image_alt = ! empty( $shop_image['alt'] ) ? $shop_image['alt'] : get_the_title();
+			?>
 			<?php if ( $shop_image ) : ?>
-				<img src="<?php echo esc_url( $shop_image['sizes']['medium'] ); ?>" alt="<?php echo esc_attr( $shop_image['alt'] ); ?>">
+				<img src="<?php echo esc_url( $shop_image['sizes']['medium'] ); ?>" alt="<?php echo esc_attr( $shop_image_alt ); ?>">
 			<?php elseif ( has_post_thumbnail() ) : ?>
 				<?php the_post_thumbnail( 'medium' ); ?>
 			<?php else : ?>

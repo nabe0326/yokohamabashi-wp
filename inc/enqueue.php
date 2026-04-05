@@ -74,12 +74,13 @@ function yokohamabashi_enqueue_assets() {
 		true
 	);
 
-	// お知らせ一覧・個別・トップのお知らせカード（home.php は template_include フラグでも拾う）
+	// お知らせ一覧・個別・トップのお知らせカード・検索結果（home.php は template_include フラグでも拾う）
 	$use_archive_styles = ! empty( $GLOBALS['yokohamabashi_use_archive_styles'] ?? null )
 		|| is_front_page()
 		|| is_home()
 		|| is_archive()
-		|| is_singular( 'post' );
+		|| is_singular( 'post' )
+		|| is_search();
 	if ( $use_archive_styles ) {
 		wp_enqueue_style(
 			'yokohamabashi-archive',
@@ -140,15 +141,6 @@ function yokohamabashi_enqueue_assets() {
 		);
 	}
 
-	// 検索結果ページでお知らせカードを表示するためのCSS
-	if ( is_search() ) {
-		wp_enqueue_style(
-			'yokohamabashi-archive',
-			get_template_directory_uri() . '/assets/css/archive.css',
-			array( 'yokohamabashi-common' ),
-			$theme_version
-		);
-	}
 }
 add_action( 'wp_enqueue_scripts', 'yokohamabashi_enqueue_assets' );
 

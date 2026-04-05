@@ -22,9 +22,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<nav class="site-footer__nav">
 				<a href="<?php echo esc_url( get_post_type_archive_link( 'shop' ) ); ?>">店舗一覧</a>
-				<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'about' ) ) ); ?>">商店街について</a>
-				<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'access' ) ) ); ?>">アクセス</a>
-				<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>">お問い合わせ</a>
+				<?php
+				$about_page   = get_page_by_path( 'about' );
+				$access_page  = get_page_by_path( 'access' );
+				$contact_page = get_page_by_path( 'contact' );
+				?>
+				<?php if ( $about_page ) : ?>
+					<a href="<?php echo esc_url( get_permalink( $about_page ) ); ?>">商店街について</a>
+				<?php endif; ?>
+				<?php if ( $access_page ) : ?>
+					<a href="<?php echo esc_url( get_permalink( $access_page ) ); ?>">アクセス</a>
+				<?php endif; ?>
+				<?php if ( $contact_page ) : ?>
+					<a href="<?php echo esc_url( get_permalink( $contact_page ) ); ?>">お問い合わせ</a>
+				<?php endif; ?>
 			</nav>
 
 			<div class="site-footer__sns">

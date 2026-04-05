@@ -32,8 +32,11 @@ $shop_info_has_content = $shop_hours || $shop_holiday || $shop_tel || $shop_addr
 		<article class="shop-detail">
 			<!-- 店舗写真 -->
 			<div class="shop-detail__image">
+				<?php
+				$shop_image_alt = ! empty( $shop_image['alt'] ) ? $shop_image['alt'] : get_the_title();
+				?>
 				<?php if ( $shop_image ) : ?>
-					<img src="<?php echo esc_url( $shop_image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $shop_image['alt'] ); ?>">
+					<img src="<?php echo esc_url( $shop_image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $shop_image_alt ); ?>">
 				<?php elseif ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail( 'large' ); ?>
 				<?php endif; ?>
@@ -76,10 +79,15 @@ $shop_info_has_content = $shop_hours || $shop_holiday || $shop_tel || $shop_addr
 									<?php endif; ?>
 
 									<?php if ( $shop_tel ) : ?>
+										<?php
+										// tel:リンク用に全角を半角に変換し、数字とハイフン以外を除去
+										$shop_tel_link = mb_convert_kana( $shop_tel, 'a', 'UTF-8' );
+										$shop_tel_link = preg_replace( '/[^0-9\-]/', '', $shop_tel_link );
+										?>
 										<tr>
 											<th scope="row">電話番号</th>
 											<td>
-												<a class="shop-detail__info-link" href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $shop_tel ) ); ?>"><?php echo esc_html( $shop_tel ); ?></a>
+												<a class="shop-detail__info-link" href="tel:<?php echo esc_attr( $shop_tel_link ); ?>"><?php echo esc_html( $shop_tel ); ?></a>
 											</td>
 										</tr>
 									<?php endif; ?>
