@@ -29,3 +29,8 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Customizer設定
 require get_template_directory() . '/inc/customizer.php';
+
+// 店舗CSVインポート（管理画面のみ）
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin-import.php';
+}
