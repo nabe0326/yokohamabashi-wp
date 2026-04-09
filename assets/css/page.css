@@ -83,6 +83,98 @@
 }
 
 /* ==========================================================================
+   アクセス：各方面からの行き方
+   ========================================================================== */
+.access-routes {
+	margin-bottom: 2rem;
+}
+
+.access-route {
+	margin-bottom: 2rem;
+	padding: 1.5rem;
+	background: var(--color-white);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-sm);
+}
+
+.access-route__header {
+	margin-bottom: 1rem;
+}
+
+.access-route__title {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: var(--color-primary);
+	margin-bottom: 0.25rem;
+	padding-left: 0.75rem;
+	border-left: 4px solid var(--color-primary);
+}
+
+.access-route__lead {
+	margin: 0.5rem 0 0;
+	color: var(--color-text-light);
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+.access-route__photo {
+	margin: 0 0 1rem;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.access-route__photo img {
+	width: 100%;
+	height: auto;
+	display: block;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.access-route__photo-placeholder {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-bg);
+	border-radius: 8px;
+	border: 2px dashed var(--color-border);
+	color: var(--color-text-light);
+	font-size: 0.875rem;
+	margin-bottom: 1rem;
+}
+
+.access-route__desc {
+	color: var(--color-text);
+	line-height: 1.8;
+	font-size: 0.95rem;
+}
+
+.access-route__desc p {
+	margin: 0;
+}
+
+@media (min-width: 768px) {
+	.access-route {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto 1fr;
+		gap: 0 1.5rem;
+		align-items: start;
+	}
+
+	.access-route__header {
+		grid-column: 1 / -1;
+	}
+
+	.access-route__photo,
+	.access-route__photo-placeholder {
+		margin-bottom: 0;
+	}
+}
+
+/* ==========================================================================
    商店街についてページ
    ========================================================================== */
 .about-section {

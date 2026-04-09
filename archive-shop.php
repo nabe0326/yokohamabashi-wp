@@ -18,18 +18,22 @@ get_header();
 	</section>
 	<div class="container page-main-content">
 
-		<!-- Google Map -->
+		<!-- 商店街イラストマップ -->
+		<?php $map_image = get_theme_mod( 'shop_illustrated_map', '' ); ?>
+		<?php if ( $map_image ) : ?>
 		<section class="shop-map">
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.8!2d139.6194!3d35.4344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5qiq5rWc5qmL5ZWG5bqX6KGX!5e0!3m2!1sja!2sjp!4v1234567890"
-				width="100%"
-				height="300"
-				style="border:0;"
-				allowfullscreen=""
+			<img
+				src="<?php echo esc_url( $map_image ); ?>"
+				alt="横浜橋商店街マップ"
+				class="shop-map__image"
 				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-			></iframe>
+			>
 		</section>
+		<?php else : ?>
+		<section class="shop-map shop-map--empty">
+			<p class="shop-map__placeholder">※ 外観 &gt; カスタマイズ の「商店街マップ画像」から画像を設定してください。</p>
+		</section>
+		<?php endif; ?>
 
 		<!-- 検索・フィルタ -->
 		<div class="shop-search">
