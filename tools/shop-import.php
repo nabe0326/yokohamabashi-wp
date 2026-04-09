@@ -55,10 +55,21 @@ class Yokohamabashi_Shop_Importer {
 
 	/**
 	 * コンストラクタ
+	 *
+	 * @param string|null $csv_path CSVファイルパス。省略時は tools/shops.csv を使用。
 	 */
-	public function __construct() {
-		$this->csv_path  = __DIR__ . '/shops.csv';
+	public function __construct( $csv_path = null ) {
+		$this->csv_path  = $csv_path ?? __DIR__ . '/shops.csv';
 		$this->image_dir = wp_upload_dir()['basedir'] . '/shop-import/';
+	}
+
+	/**
+	 * インポート結果を返す
+	 *
+	 * @return array
+	 */
+	public function get_results() {
+		return $this->results;
 	}
 
 	/**
@@ -373,7 +384,9 @@ class Yokohamabashi_Shop_Importer {
 	}
 }
 
-// 実行
-$dry_run = in_array( '--dry-run', $argv ?? array(), true );
-$importer = new Yokohamabashi_Shop_Importer();
-$importer->run( $dry_run );
+// WP-CLI経由のみ自動実行（管理画面からincludeした場合は実行しない）
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	$dry_run  = in_array( '--dry-run', $argv ?? array(), true );
+	$importer = new Yokohamabashi_Shop_Importer();
+	$importer->run( $dry_run );
+}
