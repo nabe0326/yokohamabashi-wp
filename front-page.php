@@ -230,11 +230,22 @@ if ( $hero_image ) {
 		<div class="container">
 			<h2 class="section-title">SNS・関連リンク</h2>
 			<div class="links-grid">
-				<a href="#" class="link-card" target="_blank" rel="noopener noreferrer">
-					<span class="link-card__icon dashicons dashicons-facebook" aria-hidden="true"></span>
-					<span class="link-card__title">Facebook</span>
+				<?php $x_url = get_field( 'front_x_url' ); ?>
+				<a href="<?php echo esc_url( $x_url ? $x_url : '#' ); ?>" class="link-card link-card--x" target="_blank" rel="noopener noreferrer">
+					<span class="link-card__icon link-card__icon--svg" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.264 5.636 5.9-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+					</span>
+					<span class="link-card__title">X（旧Twitter）</span>
 				</a>
-				<a href="#" class="link-card link-card--instagram" target="_blank" rel="noopener noreferrer">
+				<?php $tiktok_url = get_field( 'front_tiktok_url' ); ?>
+				<a href="<?php echo esc_url( $tiktok_url ? $tiktok_url : '#' ); ?>" class="link-card link-card--tiktok" target="_blank" rel="noopener noreferrer">
+					<span class="link-card__icon link-card__icon--svg" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.28a8.27 8.27 0 0 0 4.84 1.54V7.37a4.85 4.85 0 0 1-1.07-.68z"/></svg>
+					</span>
+					<span class="link-card__title">TikTok</span>
+				</a>
+				<?php $instagram_url = get_field( 'front_instagram_url' ); ?>
+				<a href="<?php echo esc_url( $instagram_url ? $instagram_url : '#' ); ?>" class="link-card link-card--instagram" target="_blank" rel="noopener noreferrer">
 					<span class="link-card__icon dashicons dashicons-instagram" aria-hidden="true"></span>
 					<span class="link-card__title">Instagram</span>
 				</a>

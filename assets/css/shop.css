@@ -14,7 +14,7 @@
 	}
 }
 
-/* Google Map
+/* 商店街マップ
    ========================================================================== */
 .shop-map {
 	margin-bottom: 2rem;
@@ -22,8 +22,23 @@
 	overflow: hidden;
 }
 
-.shop-map iframe {
+.shop-map__image {
+	width: 100%;
+	height: auto;
 	display: block;
+}
+
+.shop-map--empty {
+	padding: 2.5rem 1rem;
+	text-align: center;
+	background: var(--color-bg);
+	border: 2px dashed var(--color-border);
+}
+
+.shop-map__placeholder {
+	color: var(--color-text-light);
+	font-size: 0.875rem;
+	margin: 0;
 }
 
 /* 店舗検索

@@ -850,6 +850,43 @@
 	color: var(--color-white);
 }
 
+.link-card--x {
+	border: 1px solid #e5e7eb;
+}
+
+.link-card--x .link-card__icon {
+	background: #f3f4f6;
+	color: #111;
+}
+
+.link-card--x:hover .link-card__icon {
+	background: #111;
+	color: var(--color-white);
+}
+
+.link-card--tiktok {
+	border: 1px solid #e5e7eb;
+}
+
+.link-card--tiktok .link-card__icon {
+	background: #f0fffe;
+	color: #010101;
+}
+
+.link-card--tiktok:hover .link-card__icon {
+	background: #010101;
+	color: #69c9d0;
+}
+
+.link-card__icon--svg {
+	font-size: 0;
+}
+
+.link-card__icon--svg svg {
+	width: 28px;
+	height: 28px;
+}
+
 .link-card__title {
 	font-size: 0.9rem;
 	font-weight: 500;

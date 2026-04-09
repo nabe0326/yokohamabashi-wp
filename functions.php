@@ -26,3 +26,6 @@ require get_template_directory() . '/inc/acf-fields.php';
 
 // テンプレートヘルパー
 require get_template_directory() . '/inc/template-tags.php';
+
+// Customizer設定
+require get_template_directory() . '/inc/customizer.php';
